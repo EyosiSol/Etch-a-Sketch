@@ -5,37 +5,36 @@ const setbtn = document.getElementById("set-color");
 
 let currentColor = "black";
 
+//sets the drawing color to the color that has been assigned 
 setbtn.addEventListener('click',function(){
     let color =(input.value); 
     currentColor = color.toLowerCase();
 });
 
-// Function to create a single square element
+//create a single square element
+
 function createSquare() {
   const square = document.createElement("div");
   square.classList.add("etch-square");
   return square;
 }
 
-// Generate squares (adjust loop counts for desired grid size)
-for (let i = 0; i <=14; i++) {
-  for (let j = 0; j <=20; j++) {
+// Generate squares by looping 
+for (let i = 0; i <=33; i++) {
+  for (let j = 0; j <=18; j++) {
     const square = createSquare();
     etchContainer.appendChild(square);
   }
 }
 
-// Track current drawing color (optional)
- // Can be changed to allow color selection
-// Drawing functionality
-let isDrawing = false; // Flag to track drawing state
+let isDrawing = false; // a variable inorder to check if the mouse is drawing
 
 etchContainer.addEventListener("mousedown", () => {
-  isDrawing = true; // Set drawing flag to true on mousedown
+  isDrawing = true; // Set isdrawing to true on mousedown
 });
 
 etchContainer.addEventListener("mouseup", () => {
-  isDrawing = false; // Set drawing flag to false on mouseup
+  isDrawing = false; // Set isdrawing  to false on mouseup
 });
 
 etchContainer.addEventListener("mousemove", (event) => {
@@ -43,15 +42,13 @@ etchContainer.addEventListener("mousemove", (event) => {
     // Get the element under the mouse pointer
     const target = event.target;
 
-    // Check if the target is a square element
     if (target.classList.contains("etch-square")) {
       target.style.backgroundColor = currentColor; // Change its background color
     }
   }
 });
 
-// Clear button functionality (optional)
-const clearBtn = document.getElementById("clear-btn"); // Assuming a clear button exists
+const clearBtn = document.getElementById("clear-btn"); 
 
 clearBtn.addEventListener("click", () => {
   const squares = etchContainer.querySelectorAll(".etch-square");

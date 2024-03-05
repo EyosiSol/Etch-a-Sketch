@@ -1,4 +1,5 @@
 body{
+    margin-top: 0px;
     background-color: rgb(236, 232, 232);
     font-family: "Kanit", sans-serif;
 }
@@ -20,8 +21,8 @@ body{
     justify-content: space-between;
 }
 #etch-container {
-    width: 500px; /* Adjust width as needed */
-    height: 67vh; /* Adjust height as needed */
+    width: 500px;/* Adjust width as needed */
+    height: 68vh; /* Adjust height as needed */
     background-color: rgb(206, 195, 195); /* Optional background color */
     border: 1px solid #000000; /* Optional border */
     padding: 10px;
@@ -31,8 +32,8 @@ body{
     padding-bottom: 22px;
 }
 .etch-square {
-    width: 21px; /* Adjust width and height for desired grid size */
-    height: 21px;
+    width: 11px; /* Adjust width and height for desired grid size */
+    height: 11px;
     background-color: #ffffff; /* Initially white squares */
     display: inline-block; /* Arrange squares side-by-side */
     border: 0.1px solid ; /* Optional border for each square */
